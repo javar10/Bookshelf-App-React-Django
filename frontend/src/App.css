@@ -1,0 +1,14 @@
+
+.App {
+  text-align: center;
+}
+
+
+.displayBookSearch {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.displayBookSearchCard {
+  max-width: 250px;
+}
