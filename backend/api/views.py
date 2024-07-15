@@ -41,15 +41,15 @@ def bookCreate(request):
 
     return Response(serializer.data)
 
-# @api_view(['POST'])
-# def taskUpdate(request, pk):
-#     task = Book.objects.get(id=pk)
-#     serializer = BookSerializer(instance=task, data=request.data)
+@api_view(['POST'])
+def bookUpdate(request, pk):
+    book = Book.objects.get(id=pk)
+    serializer = BookSerializer(instance=book, data=request.data)
 
-#     if serializer.is_valid():
-#         serializer.save()
+    if serializer.is_valid():
+        serializer.save()
 
-#     return Response(serializer.data)
+    return Response(serializer.data)
 
 
 @api_view(['DELETE'])
