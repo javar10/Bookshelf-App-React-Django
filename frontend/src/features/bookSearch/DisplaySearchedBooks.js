@@ -5,13 +5,13 @@ const DisplaySearchedBooks = ({ imageIdArray, searchData }) => {
 
     return (
         // <>
-            <div className='displayBookSearch'>
+            <div className='displayBooksDiv'>
                 {imageIdArray.map((id, index) => {
                     if (id) {
                         return (
                             <>
-                                <div key={index} id={index} className='displayBookSearchCard card'>
-                                    <div className='card-body'>
+                                <div key={index} id={index} className='displayBookCard'>
+                                    <div>
                                     <img src={`https://covers.openlibrary.org/b/olid/${id}-M.jpg`} />
                                     <h4>{searchData.docs[index].title}
                                         <span style={{ fontStyle: 'italic' }}>({searchData.docs[index].first_publish_year})</span>

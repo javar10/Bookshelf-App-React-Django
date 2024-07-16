@@ -1,14 +1,34 @@
-
 .App {
-  text-align: center;
+  background-color: #faecc3;
+
 }
 
+.bookshelfHeading {
+  margin-left: 40px;
+}
 
-.displayBookSearch {
+.displayBooksDiv {
   display: flex;
   flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px 40px;
+  background-color: white;
 }
 
-.displayBookSearchCard {
-  max-width: 250px;
+.displayBookCard {
+  /* display: flex; */
+
+  width: 200px;
+  height: 400px;
+  text-wrap: wrap;
+  margin: 10px;
+  padding: 5px;
+  /* border-bottom: 1px solid black; */
+  background-color: #dae3fc74;
+  box-shadow: 0 0 5px #dae3fc;
+}
+
+.displayBookCard:last-child {
+  /* border-bottom: none; */
 }

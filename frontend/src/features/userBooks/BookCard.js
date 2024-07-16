@@ -23,10 +23,10 @@ const DisplaySearchedBooks = ({ bookList }) => {
 
     return (
         <>
-            <div className='displayBookSearch'>
+            <div className='displayBooksDiv'>
                 {bookList.map((book, index) => {
                     return (
-                        <div key={index} id={index} className='displayBookCard'>
+                        <div key={index} id={index} className='displayBookCard card'>
                         <img src={book.coverURL} alt={`image of ${book.title}`}/>
                         <h4>{book.title} <span style={{ fontStyle: 'italic' }}>({book.firstPublishDate})</span></h4>
                         <p>Written by: {book.author}</p>
