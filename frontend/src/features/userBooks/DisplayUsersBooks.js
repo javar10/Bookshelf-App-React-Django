@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import BookCard from './BookCard';
 import { API_BASE_URL }from '../../utils/API_BASE_URL';
+import axios from 'axios';
 
 const DisplayUsersBooks = () => {
   const [bookList, setBookList] = useState([]);
@@ -10,10 +11,8 @@ const DisplayUsersBooks = () => {
   useEffect(() => {
     const getBookList = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}book-list/`);
-        const data = await res.json();
-        console.log(data);
-        setBookList(data);
+        const response = await axios.get(`${API_BASE_URL}book-list/`);
+        setBookList(response.data);
       } catch (error) {
         console.log(`Error: ${error.message}`);
       }
