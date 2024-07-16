@@ -1,15 +1,11 @@
-import { useState, useEffect } from "react";
+
 import { API_BASE_URL } from "../../utils/API_BASE_URL";
 import axios from 'axios';
 
 const AddBookButton = ({ index, data }) => {
-    console.log(index)
-    console.log(data)
 
     const handleClick = async (e) => {
         e.preventDefault();
-        console.log(data);
-        console.log(index);
 
         const newBook = {
             title: data.title,

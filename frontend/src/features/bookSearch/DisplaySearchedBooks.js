@@ -1,9 +1,7 @@
-import {useState} from 'react';
+
 import AddBookButton from "./AddBookButton"
 
-const DisplaySearchedBooks = ({ imageIdArray, searchData }) => {
-    console.log(imageIdArray)
-    console.log(searchData)
+const DisplaySearchedBooks = ({ imageIdArray, searchData, displayBookshelf, setDisplayBookshelf }) => {
 
     return (
         <>
@@ -18,7 +16,7 @@ const DisplaySearchedBooks = ({ imageIdArray, searchData }) => {
                                         <span style={{ fontStyle: 'italic' }}>({searchData.docs[index].first_publish_year})</span>
                                     </h4>
                                     <p>by {searchData.docs[index].author_name}</p>
-                                    <AddBookButton index={index} data={searchData.docs[index]}/>
+                                    <AddBookButton index={index} data={searchData.docs[index]} displayBookshelf={displayBookshelf} setDisplayBookshelf={setDisplayBookshelf}/>
                                 </div>
                                 
                             </>

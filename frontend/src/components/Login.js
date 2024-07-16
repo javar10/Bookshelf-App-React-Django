@@ -1,7 +1,5 @@
 import { useState } from "react"
 
-
-
 const Login = () => {
     const initalValues = {
         username: "",
@@ -12,13 +10,11 @@ const Login = () => {
 
     const handleLoginInputChange = e => {
         const { name, value } = e.target;
-        console.log({name, value});
         setInputValue({...inputValue, [name]: value});
     }
 
     const handleLoginSubmit = e => {
         e.preventDefault();
-        console.log(inputValue);
         setInputValue(initalValues);
     }
 
