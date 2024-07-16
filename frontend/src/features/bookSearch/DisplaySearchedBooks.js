@@ -4,7 +4,7 @@ import AddBookButton from "./AddBookButton"
 const DisplaySearchedBooks = ({ imageIdArray, searchData, displayBookshelf, setDisplayBookshelf }) => {
 
     return (
-        <>
+        // <>
             <div className='displayBookSearch'>
                 {imageIdArray.map((id, index) => {
                     if (id) {
@@ -25,7 +25,7 @@ const DisplaySearchedBooks = ({ imageIdArray, searchData, displayBookshelf, setD
                     }
                 })}
             </div>
-        </>
+        // </>
 
     )
 }

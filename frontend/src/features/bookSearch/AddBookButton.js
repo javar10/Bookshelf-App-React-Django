@@ -15,7 +15,7 @@ const AddBookButton = ({ index, data }) => {
             onShelf: true
         }
 
-        console.log(newBook)
+        // console.log(newBook)
 
         try {
             const response = await axios.post(`${API_BASE_URL}book-create/`, newBook);
