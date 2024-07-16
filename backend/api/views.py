@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import BookSerializer
@@ -13,7 +11,7 @@ def apiOverview(request):
         'List':'/book-list/',
         'Detail View':'/book-detail/<str:pk>/',
         'Create':'/book-create/',
-        # 'Update':'/book-update/<str:pk>/',
+        'Update':'/book-update/<str:pk>/',
         'Delete':'/book-delete/<str:pk>/',
         }
 

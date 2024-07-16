@@ -4,7 +4,6 @@ import DisplaySearchedBooks from './DisplaySearchedBooks';
 const SearchBooks = () => {
     const [inputValue, setInputValue] = useState('');
     const [imageIdArray, setImageIdArray] = useState([]);
-    const [titlesArray, setTitlesArray] = useState([]);
     const [searchData, setSearchData] = useState({});
 
     const fetchData = async () => {
@@ -12,15 +11,11 @@ const SearchBooks = () => {
             const title = inputValue.trim().replace(" ", "+");
             const response = await fetch(`https://openlibrary.org/search.json?title=${title}`);
             const data = await response.json();
-            const fetchedTitlesArray = data.docs.map(item => item.title);
             const fetchedImageIdArray = data.docs.map(item => item.cover_edition_key);
-            console.log(data);
-            console.log(titlesArray)
-            console.log(imageIdArray);
-
+            console.log(data)
+        
             setSearchData(data);
             setImageIdArray(fetchedImageIdArray);
-            setTitlesArray(fetchedTitlesArray);
         }
         catch (error) {
             console.error('Error fetching data: ', error)
@@ -46,8 +41,6 @@ const SearchBooks = () => {
                 <button>Search</button>
             </form>
             <DisplaySearchedBooks imageIdArray={imageIdArray} searchData={searchData}/>
-
-            
         </div>
     )
 }
