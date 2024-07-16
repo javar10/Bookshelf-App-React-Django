@@ -22,7 +22,7 @@ const DisplayUsersBooks = () => {
 
   return (
     <>
-      <h1 className='bookshelfHeading'>Picture Books</h1>
+      <h2 className='bookshelfHeading'>Picture Books</h2>
       <div>
         <BookCard bookList={bookList} />
       </div>

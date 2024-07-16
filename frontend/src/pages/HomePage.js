@@ -8,11 +8,7 @@ const HomePage = () => {
   
     return (
         <>
-            <Header />
-            {/* <Login /> */}
             <DisplayUsersBooks />
-            <SearchBooks />
-
         </>
 
 
