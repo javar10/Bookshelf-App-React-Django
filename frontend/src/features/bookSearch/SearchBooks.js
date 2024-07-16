@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DisplaySearchedBooks from './DisplaySearchedBooks';
 
-const SearchBooks = ({displayBookshelf, setDisplayBookshelf}) => {
+const SearchBooks = () => {
     const [inputValue, setInputValue] = useState('');
     const [imageIdArray, setImageIdArray] = useState([]);
     const [searchData, setSearchData] = useState({});
@@ -23,10 +23,6 @@ const SearchBooks = ({displayBookshelf, setDisplayBookshelf}) => {
 
     }
 
-    // const handleSearchInputChange = e => {
-    //     setInputValue(e.target.value);
-    // }
-
     const handleSearchSubmit = e => {
         e.preventDefault();
         fetchData();
@@ -40,7 +36,7 @@ const SearchBooks = ({displayBookshelf, setDisplayBookshelf}) => {
                 <input name="bookSearch" placeholder="Enter title" onChange={(e) => setInputValue(e.target.value)} />
                 <button>Search</button>
             </form>
-            <DisplaySearchedBooks imageIdArray={imageIdArray} searchData={searchData} displayBookshelf={displayBookshelf} setDisplayBookshelf={setDisplayBookshelf}/>
+            <DisplaySearchedBooks imageIdArray={imageIdArray} searchData={searchData} />
         </div>
     )
 }

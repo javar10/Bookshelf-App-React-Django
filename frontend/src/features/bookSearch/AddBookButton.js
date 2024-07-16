@@ -2,7 +2,7 @@
 import { API_BASE_URL } from "../../utils/API_BASE_URL";
 import axios from 'axios';
 
-const AddBookButton = ({ index, data }) => {
+const AddBookButton = ({ data }) => {
 
     const handleClick = async (e) => {
         e.preventDefault();
