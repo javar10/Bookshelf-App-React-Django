@@ -14,7 +14,7 @@ const DisplaySearchedBooks = ({ bookList }) => {
             console.log('book deleted')
         } catch (error) {
             console.error('Error deleting item:', error);
-            if(error.response) {
+            if (error.response) {
                 console.error('Detailed Error: ', error.response.data);
             }
         }
@@ -26,11 +26,34 @@ const DisplaySearchedBooks = ({ bookList }) => {
             <div className='displayBooksDiv'>
                 {bookList.map((book, index) => {
                     return (
-                        <div key={index} id={index} className='displayBookCard card'>
-                        <img src={book.coverURL} alt={`image of ${book.title}`}/>
-                        <h4>{book.title} <span style={{ fontStyle: 'italic' }}>({book.firstPublishDate})</span></h4>
-                        <p>Written by: {book.author}</p>
-                        <button id={book.id} onClick={removeBook}>Remove Book</button>
+                        <div key={index} id={index} className='displayBookCard'>
+                            <div className='bookDiv'>
+                                <div className='bookImgDiv'>
+                                    <img
+                                        src={book.coverURL}
+                                        alt={`cover of ${book.title}`}
+                                        className='bookImg'
+                                    />
+                                </div>
+
+                                <div className='bookInfoDiv'>
+                                    <h4>
+                                        {book.title}
+                                        <span style={{ fontStyle: 'italic' }}>
+                                            ({book.firstPublishDate})
+                                        </span>
+                                    </h4>
+                                    <p>{book.author}</p>
+                                    <button
+                                        id={book.id}
+                                        onClick={removeBook}
+                                        className='button removeBtn'>
+                                        Remove Book
+                                    </button>
+                                </div>
+
+                            </div>
+
                         </div>
                     )
                 })}

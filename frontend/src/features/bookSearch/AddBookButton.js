@@ -1,10 +1,12 @@
 
-import { API_BASE_URL } from "../../utils/API_BASE_URL";
+import { API_BASE_URL } from '../../utils/API_BASE_URL';
 import axios from 'axios';
 
 const AddBookButton = ({ data }) => {
 
     const handleClick = async (e) => {
+       
+
         e.preventDefault();
 
         const newBook = {
@@ -20,17 +22,19 @@ const AddBookButton = ({ data }) => {
         try {
             const response = await axios.post(`${API_BASE_URL}book-create/`, newBook);
             console.log('Book added successfully:', response.data);
-            // Optionally, update state or notify user of success
+            // Update state or notify user of success
         } catch (error) {
             console.error('Error adding book:', error);
             if(error.response) {
                 console.error('Detailed Error: ', error.response.data);
             }
         }
+
+      
     }
 
     return (
-        <button onClick={handleClick} >Add to My Bookshelf</button>
+        <button className='button' onClick={handleClick} >Add to My Bookshelf</button>
     )
 }
 

@@ -1,7 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.headerDiv {
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #563232;
+}
+
+.headerList {
+  list-style-type: none;
+  display: flex;
+}
+
+.headerListItem {
+  margin-right: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.headerListIcon {
+  margin-right: 5px;
+}
 
 .bookshelfHeading {
   margin-left: 40px;
-  color: #563232;
+  padding: 10px 0px 0px 10px
 }
 
 .displayBooksDiv {
@@ -14,10 +49,61 @@
 
 .displayBookCard {
   width: 200px;
-  height: 400px;
+  min-height: 350px;
   text-wrap: wrap;
   margin: 10px;
-  padding: 5px;
+  padding: 8px;
   background-color: #dae3fc74;
   box-shadow: 0 0 5px #dae3fc;
+}
+
+.bookDiv {
+  min-height: 332px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bookImgDiv {
+  min-height: 242px;
+  /* position: relative;
+  bottom: 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.bookImg {
+ 
+    max-width: 100%; /* Ensures image stays within its container */
+    max-height: 230px; /* Set maximum height for the image */
+    object-fit: contain; /* Optional: Maintain aspect ratio and cover container */
+
+
+}
+
+.bookInfoDiv {
+  position: relative;
+  bottom: 0;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: #563232;
+  border: none;
+  width: fit-content;
+  padding: 4px 15px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.removeBtn:hover {
+  background-color: #aa2f11;
 }
