@@ -12,7 +12,6 @@ const SearchBooks = () => {
             const response = await fetch(`https://openlibrary.org/search.json?title=${title}`);
             const data = await response.json();
             const fetchedImageIdArray = data.docs.map(item => item.cover_edition_key);
-            console.log(data)
 
             setSearchData(data);
             setImageIdArray(fetchedImageIdArray);
@@ -20,7 +19,6 @@ const SearchBooks = () => {
         catch (error) {
             console.error('Error fetching data: ', error)
         }
-
     }
 
     const handleSearchSubmit = e => {

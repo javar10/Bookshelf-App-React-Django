@@ -1,4 +1,4 @@
-import SearchBooks from "../features/bookSearch/SearchBooks"
+import SearchBooks from '../features/bookSearch/SearchBooks'
 
 const BrowsePage = () => {
   return (

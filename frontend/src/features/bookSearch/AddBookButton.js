@@ -7,8 +7,6 @@ const AddBookButton = ({ data }) => {
     const navigate = useNavigate();
 
     const handleClick = async (e) => {
-       
-
         e.preventDefault();
 
         const newBook = {
@@ -19,21 +17,15 @@ const AddBookButton = ({ data }) => {
             onShelf: true
         }
 
-        // console.log(newBook)
-
         try {
             const response = await axios.post(`${API_BASE_URL}book-create/`, newBook);
-            console.log('Book added successfully:', response.data);
-            // Update state or notify user of success
             navigate('/');
         } catch (error) {
             console.error('Error adding book:', error);
             if(error.response) {
                 console.error('Detailed Error: ', error.response.data);
             }
-        }
-
-      
+        }      
     }
 
     return (

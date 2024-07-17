@@ -5,8 +5,7 @@ import axios from 'axios';
 
 const DisplayUsersBooks = () => {
   const [bookList, setBookList] = useState([]);
-
-  console.log(bookList);
+  const [bookRemoved, setBookRemoved] = useState(false)
 
   useEffect(() => {
     const getBookList = async () => {
@@ -14,17 +13,17 @@ const DisplayUsersBooks = () => {
         const response = await axios.get(`${API_BASE_URL}book-list/`);
         setBookList(response.data);
       } catch (error) {
-        console.log(`Error: ${error.message}`);
+        console.error(`Error: ${error.message}`);
       }
     }
     getBookList();
-  }, [])
+  }, [bookRemoved])
 
   return (
     <>
       <h2 className='pageHeading'>Picture Books</h2>
       <div>
-        <BookCard bookList={bookList} />
+        <BookCard bookList={bookList} bookRemoved={bookRemoved} setBookRemoved={setBookRemoved} />
       </div>
     </>
 

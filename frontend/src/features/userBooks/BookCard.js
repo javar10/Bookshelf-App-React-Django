@@ -1,17 +1,14 @@
 import { API_BASE_URL } from '../../utils/API_BASE_URL';
 import axios from 'axios';
 
-const DisplaySearchedBooks = ({ bookList }) => {
-    console.log(bookList)
-
+const DisplaySearchedBooks = ({ bookList, bookRemoved, setBookRemoved }) => {
+    
     const removeBook = async (e) => {
-        console.log(e.target)
-        console.log(e.target.id)
         const id = e.target.id;
         try {
             await axios.delete(`${API_BASE_URL}book-delete/${id}/`);
             bookList.filter(item => item.id !== id); // Update state to re-render
-            console.log('book deleted')
+            setBookRemoved(!bookRemoved);
         } catch (error) {
             console.error('Error deleting item:', error);
             if (error.response) {
