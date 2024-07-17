@@ -2,7 +2,11 @@ import SearchBooks from "../features/bookSearch/SearchBooks"
 
 const BrowsePage = () => {
   return (
-    <SearchBooks />
+    <>
+        <h2 className='pageHeading'>Browse Books</h2>
+        <SearchBooks />
+    </>
+
   )
 }
 

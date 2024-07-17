@@ -34,7 +34,7 @@
   margin-right: 5px;
 }
 
-.bookshelfHeading {
+.pageHeading {
   margin-left: 40px;
   padding: 10px 0px 0px 10px
 }
@@ -106,4 +106,18 @@
 
 .removeBtn:hover {
   background-color: #aa2f11;
+}
+
+.searchDiv {
+  display: flex;
+  align-items: flex-end;
+  margin: 10px 40px;
+  padding: 10px 10px;
+}
+
+.searchInput{
+  padding: 3px;
+  border: 1px solid  #563232;
+  margin-left: 3px;
+  margin-right: 8px;
 }

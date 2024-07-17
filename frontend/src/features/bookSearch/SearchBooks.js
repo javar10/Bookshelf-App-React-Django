@@ -8,12 +8,12 @@ const SearchBooks = () => {
 
     const fetchData = async () => {
         try {
-            const title = inputValue.trim().replace(" ", "+");
+            const title = inputValue.trim().replace(' ', '+');
             const response = await fetch(`https://openlibrary.org/search.json?title=${title}`);
             const data = await response.json();
             const fetchedImageIdArray = data.docs.map(item => item.cover_edition_key);
             console.log(data)
-        
+
             setSearchData(data);
             setImageIdArray(fetchedImageIdArray);
         }
@@ -29,15 +29,22 @@ const SearchBooks = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSearchSubmit}>
-                <h4>Add New Book</h4>
-                <label htmlFor="bookSearch">Title</label>
-                <input name="bookSearch" placeholder="Enter title" onChange={(e) => setInputValue(e.target.value)} />
-                <button>Search</button>
-            </form>
+        <>
+            <div className='searchDiv'>
+                <form onSubmit={handleSearchSubmit}>
+                    <label htmlFor='bookSearchInput'>Search By Title</label>
+                    <input
+                        id='bookSearchInput'
+                        name='bookSearchInput'
+                        placeholder='Enter title'
+                        onChange={(e) => setInputValue(e.target.value)}
+                        className='searchInput'
+                    />
+                    <button className='button searchBtn'>Search</button>
+                </form>
+            </div>
             <DisplaySearchedBooks imageIdArray={imageIdArray} searchData={searchData} />
-        </div>
+        </>
     )
 }
 
