@@ -131,3 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://bookshelfapp-frontend.s3-website.us-east-2.amazonaws.com",
+]
