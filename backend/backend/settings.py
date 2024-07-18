@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--dn*)g6bhtxto14-g3%rkwbdf&+%hpp2v@@-)++)#f)w2ni%!9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://github.com/javar10/Bookshelf-App-React-Django.git']
 
 
 # Application definition
